@@ -131,7 +131,7 @@ function makeModal(indexPosition){
 }
 
 //Perform the fetch function
-getProfiles('https://randomuser.me/api/?results=12&nat=gb,us')//
+getProfiles('https://randomuser.me/api/?results=12&nat=gb,us')
 // getProfiles('https://fsjs-public-api-backup.herokuapp.com/api/?results=12&nat=us')
     .then(data => profileData = data.results)
     .then(makeCard)
