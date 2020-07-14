@@ -30,7 +30,7 @@ function createSearch() {
   
   //Search names based on what is typed into search bar. 
   function searchNames(search, profiles,){
-    const result = profiles.filter(profile => profile.name.first.toLowerCase() == search || profile.name.first.toLowerCase().includes(search));
+    const result = profiles.filter(profile => profile.name.first.toLowerCase() == search || profile.name.first.toLowerCase().includes(search)||profile.name.last.toLowerCase() == search || profile.name.last.toLowerCase().includes(search));
     makeCard(result);
   }
 
@@ -131,8 +131,8 @@ function makeModal(indexPosition){
 }
 
 //Perform the fetch function
-// getProfiles('https://randomuser.me/api/?results=12&nat=gb,us')//
-getProfiles('https://fsjs-public-api-backup.herokuapp.com/api/?results=12&nat=us')
+getProfiles('https://randomuser.me/api/?results=12&nat=gb,us')//
+// getProfiles('https://fsjs-public-api-backup.herokuapp.com/api/?results=12&nat=us')
     .then(data => profileData = data.results)
     .then(makeCard)
     .catch(error => console.log('Looks like there was a problem!', error))
